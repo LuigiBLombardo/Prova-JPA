@@ -1,7 +1,6 @@
 package br.com.ctw.monitoramento_transformadores.dto;
 
-public record TransformadorResponseDTO(
-        Long id,
+public record TransformadorUpdateDTO(
         String numeroSerie,
         String modelo,
         String subestacao,

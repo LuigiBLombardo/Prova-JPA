@@ -36,10 +36,15 @@ public class Transformador {
     private String modelo;
 
     @Column(
-            name = "potencia_kwa",
+            name = "subestacao",
             nullable = false
     )
-    private double potenciaKwa;
+    private String subestacao;
+    @Column(
+            name = "potencia_kva",
+            nullable = false
+    )
+    private double potenciaKva;
 
     @Column(
             name = "limite_temp_oleo",
@@ -55,7 +60,7 @@ public class Transformador {
 
     @ManyToMany
     @JoinTable(
-            name = "transformadores",
+            name = "transformador_tecnico",
             joinColumns = @JoinColumn(name = "transformador_id"),
             inverseJoinColumns = @JoinColumn(name = "tecnico_id")
     )

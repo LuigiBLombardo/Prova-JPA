@@ -19,7 +19,7 @@ public class TransformadorController {
 
     @PostMapping("/api/v1/transformadores")
     public ResponseEntity<TransformadorResponseDTO> createByTransformador (@RequestBody TransformadorRequestDTO requestDTO){
-
+        return null;
     }
 
 

@@ -5,7 +5,7 @@ public record TransformadorRequestDTO(
         String numeroSerie,
         String modelo,
         String subestacao,
-        double potenciaKwa,
+        double potenciaKva,
         double limiteTempOleo,
         double limiteTempEnrol
 ){
