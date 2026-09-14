@@ -3,6 +3,10 @@ package br.com.ctw.monitoramento_transformadores.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 @Entity
 @Table(name = "tb_transformador")
 @Getter
@@ -48,4 +52,18 @@ public class Transformador {
             nullable = false
     )
     private Double limiteTempEnrol;
+
+    @ManyToMany
+    @JoinTable(
+            name = "transformadores",
+            joinColumns = @JoinColumn(name = "transformador_id"),
+            inverseJoinColumns = @JoinColumn(name = "tecnico_id")
+    )
+    private Set<Tecnico> tecnicos = new HashSet<>();
+
+    @OneToMany(mappedBy = "transformador", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<LeituraTermica> leituraTermicas = new HashSet<>();
+
+    @OneToMany(mappedBy = "transformador", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<AlertaTermico> alertaTermicos = new HashSet<>();
 }

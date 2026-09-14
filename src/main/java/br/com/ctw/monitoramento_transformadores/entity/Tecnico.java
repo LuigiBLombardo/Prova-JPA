@@ -3,6 +3,9 @@ package br.com.ctw.monitoramento_transformadores.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "tb_tecnico")
 @Getter
@@ -44,4 +47,7 @@ public class Tecnico {
             length = 50
     )
     private String email;
+
+    @ManyToMany(mappedBy = "tecnicos", fetch = FetchType.LAZY)
+    private Set<Transformador> transformadores = new HashSet<>();
 }
