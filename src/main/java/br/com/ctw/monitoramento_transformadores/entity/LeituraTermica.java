@@ -23,13 +23,13 @@ public class LeituraTermica {
             name = "temp_oleo",
             nullable = false
     )
-    private Double tempOleo;
+    private double tempOleo;
 
     @Column(
             name = "temp_enrolamento",
             nullable = false
     )
-    private Double tempEnrolamento;
+    private double tempEnrolamento;
 
 
     @Column(

@@ -39,19 +39,19 @@ public class Transformador {
             name = "potencia_kwa",
             nullable = false
     )
-    private Double potenciaKwa;
+    private double potenciaKwa;
 
     @Column(
             name = "limite_temp_oleo",
             nullable = false
     )
-    private Double limiteTempOleo;
+    private double limiteTempOleo;
 
     @Column(
             name = "limite_temp_enrol",
             nullable = false
     )
-    private Double limiteTempEnrol;
+    private double limiteTempEnrol;
 
     @ManyToMany
     @JoinTable(
