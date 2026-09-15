@@ -150,13 +150,6 @@ http://localhost:8080/swagger-ui.html
 }
 ```
 
-## 🐞 Problemas conhecidos
-
-- **Duplicação de path no controller**: ver aviso na seção de endpoints acima.
-- **`TransformadorMapper.toUpadate`**: o método monta a entidade atualizada, mas retorna `null` em vez de `transformador`; além disso, não há endpoint `PUT`/`PATCH` no `TransformadorController` que utilize o `TransformadorUpdateDTO`.
-- **Tratamento de erros**: o `TransformadorService` lança `RuntimeException` genérica quando um transformador não é encontrado, sem um handler global (`@RestControllerAdvice`) para padronizar a resposta de erro — diferente do padrão adotado em outros projetos da equipe.
-- **`TransformadorRequestDTO` com campo `id`**: o DTO de criação aceita um `id` vindo do cliente, o que normalmente não é desejado em um cadastro (o ID deveria ser gerado pelo banco).
-
 ## ✅ Validações
 
 Atualmente os DTOs (`TransformadorRequestDTO`, `TransformadorUpdateDTO`) não possuem anotações de Bean Validation (`@NotNull`, `@NotBlank`, etc.). Recomenda-se adicioná-las para garantir consistência dos dados de entrada, seguindo o padrão dos demais projetos.
