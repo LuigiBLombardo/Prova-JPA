@@ -12,6 +12,16 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+/**
+ * Essa entity é a representação do ALertaTermico
+ *
+ * @param id
+ * @param transformador
+ * @param leitura
+ * @param dataAlerta
+ * @param tipo
+ * @param descricao
+ * */
 public class AlertaTermico {
 
     @Id
@@ -40,9 +50,9 @@ public class AlertaTermico {
     private String tipo;
 
     @Column(
-            name = "descrição",
+            name = "descricao",
             nullable = false,
-            length = 255
+            length = 100
     )
     private String descricao;
 }

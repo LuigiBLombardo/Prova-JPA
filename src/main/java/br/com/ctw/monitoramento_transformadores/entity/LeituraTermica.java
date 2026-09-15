@@ -3,6 +3,7 @@ package br.com.ctw.monitoramento_transformadores.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Locale;
 
@@ -13,6 +14,16 @@ import java.util.Locale;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+/**
+ * Essa entity é a representação do ALertaTermico
+ *
+ * @param id
+ * @param tempOleo
+ * @param tempEnrolamento
+ * @param dataHora
+ * @param alertaTermico
+ * @param transformador
+ * */
 public class LeituraTermica {
 
     @Id
@@ -23,17 +34,16 @@ public class LeituraTermica {
             name = "temp_oleo",
             nullable = false
     )
-    private double tempOleo;
+    private BigDecimal tempOleo;
 
     @Column(
             name = "temp_enrolamento",
             nullable = false
     )
-    private double tempEnrolamento;
-
+    private BigDecimal tempEnrolamento;
 
     @Column(
-            name = "data_hora",
+            name = "data_hora_leitura",
             nullable = false
     )
     private LocalDateTime dataHora;

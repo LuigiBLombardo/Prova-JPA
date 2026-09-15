@@ -13,6 +13,16 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+/**
+ * Essa entity é a representação do ALertaTermico
+ *
+ * @param id
+ * @param cpf
+ * @param nome
+ * @param especialidade
+ * @param email
+ * @param transformadores
+ * */
 public class Tecnico {
 
     @Id

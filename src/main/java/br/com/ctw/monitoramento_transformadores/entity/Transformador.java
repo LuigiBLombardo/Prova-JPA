@@ -3,6 +3,7 @@ package br.com.ctw.monitoramento_transformadores.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -14,6 +15,20 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+/**
+ * Essa entity é a representação do ALertaTermico
+ *
+ * @param id
+ * @param numeroSerie
+ * @param modelo
+ * @param subestacao
+ * @param potenciaKva
+ * @param limiteTempOleo
+ * @param limiteTempEnrol
+ * @param tecnicos
+ * @param leituraTermicas
+ * @param alertaTermicos
+ * */
 public class Transformador {
 
     @Id
@@ -44,19 +59,19 @@ public class Transformador {
             name = "potencia_kva",
             nullable = false
     )
-    private double potenciaKva;
+    private BigDecimal potenciaKva;
 
     @Column(
             name = "limite_temp_oleo",
             nullable = false
     )
-    private double limiteTempOleo;
+    private BigDecimal limiteTempOleo;
 
     @Column(
             name = "limite_temp_enrol",
             nullable = false
     )
-    private double limiteTempEnrol;
+    private BigDecimal limiteTempEnrol;
 
     @ManyToMany
     @JoinTable(

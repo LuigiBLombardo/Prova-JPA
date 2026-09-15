@@ -1,11 +1,14 @@
 package br.com.ctw.monitoramento_transformadores.dto;
 
-
+import br.com.ctw.monitoramento_transformadores.entity.AlertaTermico;
+import br.com.ctw.monitoramento_transformadores.entity.LeituraTermica;
+import br.com.ctw.monitoramento_transformadores.entity.Tecnico;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.math.BigDecimal;
+import java.util.Set;
 
-public record TransformadorRequestDTO(
+public record TransformadorDetalhadoDTO(
         @Schema(name = "Identificador unico do Transformador")
         Long id,
 
@@ -25,6 +28,12 @@ public record TransformadorRequestDTO(
         BigDecimal limiteTempOleo,
 
         @Schema(name = "Limite de tempo do enrolamento do Transformadorr")
-        BigDecimal limiteTempEnrol
-){
+        BigDecimal limiteTempEnrol,
+
+        Set<Tecnico> tecnicos,
+
+        Set<AlertaTermico> alertaTermico,
+
+        Set<LeituraTermica> leituraTermica
+) {
 }
